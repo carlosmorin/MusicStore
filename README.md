@@ -4,7 +4,7 @@
 
 Use this repository to build a music store. Clone the code to your local machine and upload your changes as a pull request. 
 
-Feel free to use any gems or libraries that may help you develop the final application (such as authentication styling, testing, admin gems, etc).
+Feel free to use any gems or libraries that may help you develop the final application (such as authentication, styling, testing, admin gems, etc).
 
 The purpose of this code challenge is to see your coding practices and architecture definition. You are not expected to deliver a fully developed, styled and sophisticated application. The main requirement is for the application to be functional and scalable.
 
