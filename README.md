@@ -2,7 +2,7 @@
 
 ## Basic Information
 
-Use this repository to build a music store. Clone the code to your local machine and upload your changes as a pull request. 
+Use this repository to build a music store. Clone the code to your local machine and upload your changes as your own repo and share the link with us. 
 
 Feel free to use any gems or libraries that may help you develop the final application (such as authentication, styling, testing, admin gems, etc).
 
