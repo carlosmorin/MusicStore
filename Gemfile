@@ -45,7 +45,7 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'devise'
-
+gem 'simple_form', '~> 5.0', '>= 5.0.1'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
