@@ -7,6 +7,8 @@
         h5.card-title
           | Music Store
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = render "shared/flash", resource: resource
+
           .form-group.text-left
             = f.input :email,
               required: false,
