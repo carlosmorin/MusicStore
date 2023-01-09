@@ -3,11 +3,11 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
+    = f.file_field :picture
     = f.input :name
     = f.input :price
     = f.input :status
     = f.input :quantity
-    = f.association :user
 
   .form-actions
     = f.button :submit, class: "btn btn-success"

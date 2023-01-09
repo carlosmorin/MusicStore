@@ -1,4 +1,5 @@
 div id="#{dom_id product}"
+  = image_tag(product.picture, width: 180)
   p
     strong Name:
     =< product.name
@@ -12,5 +13,5 @@ div id="#{dom_id product}"
     strong Quantity:
     =< product.quantity
   p
-    strong User:
-    =< product.user_id
+    strong Seller:
+    =< product.user.full_name
