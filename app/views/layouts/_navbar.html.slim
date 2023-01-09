@@ -6,12 +6,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       span.navbar-toggler-icon
     #navbarNavAltMarkup.collapse.navbar-collapse.flex-row-reverse
       ul.navbar-nav
-        li.nav-item.active
-          a.nav-link[href="#"]
-            | Home 
-            span.sr-only
-              | (current)
         - if signed_in?
+          li.nav-item.active
+            = link_to "Products", products_path, class: "nav-item nav-link"
           li.nav-item
             a.nav-link[href="#"]
               b = current_user.name.upcase
