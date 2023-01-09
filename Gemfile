@@ -46,6 +46,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'devise'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
+gem "aws-sdk-s3", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
