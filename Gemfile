@@ -47,6 +47,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem "aws-sdk-s3", require: false
+gem "image_processing", ">= 1.2"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
