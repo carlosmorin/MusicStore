@@ -1,8 +1,6 @@
+//= require actiontext
 @import "bootstrap";
-/*
- *= require_tree .
- *= require_self
-*/
+
 
 /* CSS HELPERS */
 .bg-light-gray{ background-color: #eeeeee;}
@@ -10,3 +8,4 @@
 .mt-1{margin-top: 1rem !important;}
 .mt-2{margin-top: 2rem !important;}
 .mt-5{margin-top: 5rem !important;}
+.text-d-none{ text-decoration: none;}
