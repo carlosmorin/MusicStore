@@ -3,6 +3,9 @@
     = link_to "Back to products", products_path, class: "btn btn-link"
 
     == render @product
+    .card.card-body.mt-1
+      strong Description:
+      == @product.description
 
     .row.mt-1
       .col-3

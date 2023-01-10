@@ -12,8 +12,14 @@
       = f.input :quantity
   .row.mt-2
     .col-4
+      = f.label :picture
+      br
       = image_tag(@product.picture, width: 180, class: "rounded img-thumbnail mb-2") if @product.picture.attached?
       = f.file_field :picture
+  .row.mt-2
+    .col-12
+      = f.label :description
+      = f.rich_text_area :description
   br
   .form-actions.mt-1
     = f.button :submit, class: "btn btn-success"
