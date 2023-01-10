@@ -1,4 +1,14 @@
 FactoryBot.define do
+  factory :list do
+    product { nil }
+    cart { nil }
+    quantity { 1 }
+  end
+
+  factory :cart do
+    user { nil }
+  end
+
   factory :product do
     name { "MyString" }
     price { 1.5 }
