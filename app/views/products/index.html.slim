@@ -1,10 +1,9 @@
-
 .row
   .col-10.text-left
     h1 Products
   .col-2.text-left
-    = link_to "New product", new_product_path, class: "btn btn-success"
-
+    - if can? :manage, Product
+      = link_to "New product", new_product_path, class: "btn btn-success"
 .row.mt-2
   - @products.each do |product|
     .col-md-3
