@@ -7,5 +7,7 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   validates :picture, presence: true
+  validates :status, presence: true
 
+  enum status: %i[inactive active]
 end

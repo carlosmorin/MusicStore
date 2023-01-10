@@ -7,6 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum role: %i[buyer seller]
+
   def full_name
     "#{name} #{last_name}"
   end
