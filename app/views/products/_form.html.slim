@@ -1,13 +1,19 @@
 = simple_form_for(@product) do |f|
-  = f.error_notification
-  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
-
-  .form-inputs
-    = f.file_field :picture
-    = f.input :name
-    = f.input :price
-    = f.input :status
-    = f.input :quantity
-
-  .form-actions
+  = render "devise/shared/error_messages", resource: @product
+  .row
+    .col-12
+      = f.input :name
+  .row
+    .col-4
+      = f.input :price
+    .col-4
+      = f.input :status, collection: Product.statuses.keys
+    .col-4
+      = f.input :quantity
+  .row.mt-2
+    .col-4
+      = image_tag(@product.picture, width: 180, class: "rounded img-thumbnail mb-2") if @product.picture.attached?
+      = f.file_field :picture
+  br
+  .form-actions.mt-1
     = f.button :submit, class: "btn btn-success"

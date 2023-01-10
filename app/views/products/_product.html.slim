@@ -1,17 +1,17 @@
-div id="#{dom_id product}"
-  = image_tag(product.picture, width: 180)
-  p
-    strong Name:
-    =< product.name
-  p
-    strong Price:
-    =< product.price
-  p
-    strong Status:
-    =< product.status
-  p
-    strong Quantity:
-    =< product.quantity
-  p
-    strong Seller:
-    =< product.user.full_name
+.card.bg-light.text-dark
+  = image_tag(product.picture, width: "200")
+  .card-body
+    h5.card-title
+      = product.name
+    p.card-text
+      strong Price:
+      '
+      = product.price
+    p
+      strong Quantity:
+      '
+      = product.quantity
+    p
+      strong Status:
+      '
+      = product.status

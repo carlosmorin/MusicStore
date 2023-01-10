@@ -1,11 +1,12 @@
-p style="color: green" = notice
 
-h1 Products
+.row
+  .col-10.text-left
+    h1 Products
+  .col-2.text-left
+    = link_to "New product", new_product_path, class: "btn btn-success"
 
-#products
+.row.mt-2
   - @products.each do |product|
-    == render product
-    p
-      = link_to "Show this product", product
-
-= link_to "New product", new_product_path
+    .col-md-3
+      = link_to product, class: "text-d-none" do 
+        == render product

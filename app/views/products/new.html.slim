@@ -1,8 +1,10 @@
-h1 New product
+.row
+  .col-md-8.offset-md-2
+    = link_to "Back to products", products_path, class: "btn btn-link"
+    .card.text-left.mt-1
+      .card-header
+        h5.card-title.mt-1
+          | New product 
+      .card-body
+        == render "form", product: @product
 
-== render "form", product: @product
-
-br
-
-div
-  = link_to "Back to products", products_path

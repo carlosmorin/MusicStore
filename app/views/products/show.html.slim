@@ -1,10 +1,11 @@
-p style="color: green" = notice
+.row
+  .col-md-8.offset-md-2
+    = link_to "Back to products", products_path, class: "btn btn-link"
 
-== render @product
+    == render @product
 
-div
-  => link_to "Edit this product", edit_product_path(@product)
-  '|
-  =< link_to "Back to products", products_path
-
-  = button_to "Destroy this product", @product, method: :delete
+    .row.mt-1
+      .col-3
+        = link_to "Edit this product", edit_product_path(@product), class: "btn btn-info"
+      .col-3
+        = button_to "Destroy this product", @product, method: :delete, class: "btn btn-danger"
