@@ -2,7 +2,7 @@ class CartController < ApplicationController
   before_action :set_product, only: %i[add]
   include CartConcern
 
-  def show
+  def index
   end
 
   def add
