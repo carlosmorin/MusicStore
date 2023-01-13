@@ -13,4 +13,8 @@ module CartConcern
     @cart = Cart.create(user: current_user)
     session[:cart_id] = @cart.id
   end
+
+  def close_cart
+    session[:cart_id] = nil
+  end
 end

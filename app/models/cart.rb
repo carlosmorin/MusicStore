@@ -1,6 +1,7 @@
 class Cart < ApplicationRecord
   belongs_to :user, inverse_of: :carts
   has_many :lists, inverse_of: :cart, dependent: :destroy
+  enum status: %i[open closed]
 
   def empty?
     lists.size.eql? 0

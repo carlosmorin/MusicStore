@@ -25,6 +25,14 @@ class CartController < ApplicationController
     current_list.update(list_params)
   end
 
+  def finish
+    @cart.status = :closed
+    @cart.save!
+    close_cart
+
+    render_partials
+  end
+
   def destroy
     current_list.destroy
   end
@@ -34,8 +42,8 @@ class CartController < ApplicationController
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.replace('cart', partial: 'cart/cart', locals: { cart: @cart }),
-            turbo_stream.replace('cart_icon', partial: 'cart/cart_icon', locals: { cart: @cart })
+            turbo_stream.replace('cart', partial: 'cart/cart', locals: { cart: @cart}),
+            turbo_stream.replace('cart_icon', partial: 'cart/cart_icon', locals: { cart: @cart  })
           ]
         end
       end

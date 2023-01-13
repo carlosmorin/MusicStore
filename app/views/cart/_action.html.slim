@@ -1,4 +1,4 @@
-= simple_form_for(list, url: cart_add_path) do |f|
+= simple_form_for(list, url: add_cart_path) do |f|
   .row
     .col-6
       = f.input :product_id, as: :hidden, input_html: { value: product.id }
