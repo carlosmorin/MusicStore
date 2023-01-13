@@ -1,18 +1,24 @@
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+nav.navbar.navbar-dark.navbar-expand-lg.bg-dark.fixed-top
   .container
-    = link_to root_path, class: "navbar-brand" do
+    a.navbar-brand[href="#"]
       b Music Store
-    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"]
+    button.navbar-toggler[type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"]
       span.navbar-toggler-icon
-    #navbarNavAltMarkup.collapse.navbar-collapse.flex-row-reverse
-      ul.navbar-nav
+    #offcanvasDarkNavbar.offcanvas.offcanvas-end.text-bg-dark[tabindex="-1" aria-labelledby="offcanvasDarkNavbarLabel"]
+      .offcanvas-header
+        h5#offcanvasDarkNavbarLabel.offcanvas-title
+          | Menu
+        button.btn-close.btn-close-white[type="button" data-bs-dismiss="offcanvas" aria-label="Close"]
+      .offcanvas-body
         - if signed_in?
-          li.nav-item.active
-            = link_to "Products", products_path, class: "nav-item nav-link"
-          li.nav-item
-            a.nav-link[href="#"]
-              b = current_user.name.upcase
-          li.nav-item
-            span.sr-only
-              = link_to "(Sign out)", destroy_user_session_path, class: "nav-item nav-link", data: { turbo_method: :delete }
-           
+          ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+            li.nav-item.active
+              = link_to "Products", products_path, class: "nav-item nav-link"
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle[href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"]
+                = current_user.name.upcase 
+              ul.dropdown-menu.dropdown-menu-dark
+                li
+                  = link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete }
+            li.nav-item.active
+              = render "cart/cart_icon"
