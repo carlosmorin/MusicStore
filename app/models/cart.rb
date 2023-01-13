@@ -6,6 +6,10 @@ class Cart < ApplicationRecord
     lists.size.eql? 0
   end
 
+  def items_size
+    lists.to_a.sum { |list| list.quantity }
+  end
+
   def total
     lists.to_a.sum { |list| list.total }
   end
