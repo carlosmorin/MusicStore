@@ -1,0 +1,8 @@
+h1
+  | Cart
+hr
+- if @cart.lists.count > 0
+  = render "cart"
+- else
+  p
+    | Your cart is empty

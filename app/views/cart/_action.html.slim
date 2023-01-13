@@ -1,0 +1,7 @@
+= simple_form_for(list, url: cart_add_path) do |f|
+  .row
+    .col-6
+      = f.input :product_id, as: :hidden, input_html: { value: product.id }
+      = f.input :quantity, label: false, input_html: { value: list.quantity }
+    .col-4
+      = f.button :submit, "Update", class: "btn btn-success mt-1"

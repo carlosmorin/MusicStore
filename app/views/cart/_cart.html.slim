@@ -1,0 +1,9 @@
+= turbo_frame_tag "cart" do
+  - unless @cart.empty?
+    = render "cart/list"
+    p
+      | Total: 
+      = @cart.total
+  - else
+    p
+      | Your cart is empty
