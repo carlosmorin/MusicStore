@@ -1,0 +1,45 @@
+.row
+  .col-12.text-left
+    h1 = "Purchase # #{@purchase.id}"
+.row
+  .col-12
+    = link_to "Back to purchases", purchases_path, class: "btn btn-link"
+    .card.card-body
+      p
+        strong Date:
+        '
+        = @purchase.updated_at
+      table.table.mt2
+        thead
+          tr
+            th[scope="col"]
+              | Name
+            th[scope="col"]
+              | Unit price
+            th[scope="col"]
+              | Quantity
+            th[scope="col"]
+              | Total
+            th[scope="col"]
+              
+        tbody
+          - @purchase.lists.each do |list|
+            tr
+              th[scope="row"]
+                = link_to list.product.name, list.product
+              td
+                = number_to_currency list.product.price
+              td
+                = list.quantity
+              td
+                = number_to_currency list.total
+        tfoot
+          tr
+            td colspan="2"
+            td 
+              b = @purchase.items_size
+            td 
+              b = number_to_currency @purchase.total
+              
+
+

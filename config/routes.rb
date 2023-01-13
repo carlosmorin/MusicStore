@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products
+  resources :purchases, only: [:index, :show]
   devise_for :users
   root "main#index"
 

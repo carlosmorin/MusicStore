@@ -1,0 +1,29 @@
+.row
+  .col-12.text-left
+    h1 My purchases
+.row.mt-1
+  .col-12
+    table.table
+      thead
+        tr
+          th[scope="col"]
+            | #
+          th[scope="col"]
+            | # Items
+          th[scope="col"]
+            | Total
+          th[scope="col"]
+            
+      tbody
+        - @purchases.each do |purchase|
+          tr
+            th[scope="row"]
+              = purchase.id
+            td
+              = purchase.items_size
+            td
+              = purchase.total
+            td
+              = link_to "See details", purchase_path(purchase), class: "btn btn-primary" 
+
+        
